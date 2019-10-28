@@ -29,7 +29,7 @@ class BlogCard extends Component {
                   <img src={article.user.profile_image_90} alt="#" className="primary-sticky-nav-profile-image" />
         
               <div className="article-header">
-                  <a href={article.url} target="_blank"  className="article-title">{article.title}</a>
+                  <a href={article.url} target="_blank" rel="noopener noreferrer" className="article-title">{article.title}</a>
                   <h4 className="article-author">{article.description}</h4>
                     <div className="primary-sticky-nav-element-details">
                         {article.tag_list.map((e, index) => {

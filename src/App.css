@@ -151,3 +151,22 @@ a {
   height: auto;
   font-size: .9em;
 }
+
+/*ONPAGENAV*/
+
+/*.narrow-nav-select {
+  display: flex;
+  justify-content: center;
+}*/
+
+.on-page-nav-controls {
+  display: flex;
+  justify-content: space-between;
+  height: 2em;
+  align-items: center;
+  margin: 10px;
+}
+
+.on-page-nav-butt {
+  font-size: 1em;
+}
