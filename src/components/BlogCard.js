@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import MainArticleCard from './MainArticleCard';
 
 class BlogCard extends Component {
     constructor(props) {
@@ -20,7 +21,7 @@ class BlogCard extends Component {
 
     getArticles() {
         return (
-            this.state.articles.map(article => {
+            this.state.articles.slice(1).map(article => {
                 return (
                     <section className="primary-sticky-nav" key={article.id}>
             <div className="primary-sticky-nav-element">
@@ -41,26 +42,26 @@ class BlogCard extends Component {
             </div>
 
            <div>
-                  <div className="primary-sticky-nav-author-follow article-footer">
-                        <div className="article-icon-container">
-                              <FontAwesomeIcon icon="heart" />
-                              <span style={{margin: "3px"}}>{article.positive_reactions_count}</span>
-                        </div>
+              <div className="primary-sticky-nav-author-follow article-footer">
+                  <div className="article-icon-container">
+                    <FontAwesomeIcon icon="heart" />
+                    <span style={{margin: "3px"}}>{article.positive_reactions_count}</span>
+                  </div>
 
-                        <div className="article-icon-container">
-                              <FontAwesomeIcon icon="comments" />
-                              <span style={{margin: "3px"}}>{article.comments_count}</span>
-                        </div>
+                  <div className="article-icon-container">
+                    <FontAwesomeIcon icon="comments" />
+                    <span style={{margin: "3px"}}>{article.comments_count}</span>
+                  </div>
 
-                        <div className="article-icon-container">
-                              <button className="save-button"> SAVE </button>
-                        </div>
+                  <div className="article-icon-container">
+                    <button className="save-button"> SAVE </button>
+                  </div>
                   
                   </div>
             </div> 
             
         
-        
+                
         
                   </div>
             </section>
@@ -70,7 +71,10 @@ class BlogCard extends Component {
     }
     render() {
         return (
-            <div>{this.getArticles()}</div>
+            <div>
+              <MainArticleCard article={this.state.articles[0]}/>,
+              {this.getArticles()}
+            </div>
         )
     }
 };
